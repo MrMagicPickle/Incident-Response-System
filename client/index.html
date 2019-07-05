@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Incident Response Team Client</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/static/client_page.css" />
+</head>
+
+<body>
+  <div class='container'>
+    <div id='header'>
+      <h1>Incident Response Team Client</h1>
+    </div>
+    <div id='connectionStatus'>
+      <p>Disconnected!</p>
+    </div>
+
+    <!-- Alarm duration -->
+    <div id="overlay">
+      <div class="overlay-content">
+        <h1 id="text">Select Alarm Duration</h1>
+        <div class="overlay">
+          <select id="duration">
+            <option value="3">3 Seconds</option>
+            <option value="30">30 Seconds</option>
+            <option value="60">60 Seconds</option>
+            <option value="120">120 Seconds</option>
+            <option value="240">240 Seconds</option>
+          </select>
+        </div>
+        <div class="overlay">
+          <button id="alarmWithDuration" onclick="soundAlarm()">Sound Alarm</button>
+          <button id="cancelAlarm" onclick="offOverlay()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id='message'>
+      <p id='groundStaffMsg'>Ground: No incident</p>
+      <p id='responseTeamMsg'>Response: No incident</p>
+    </div>
+
+    <div id='actionButtons'>
+      <button id='police' onclick='alertPolice()'>Police</button>
+      <button id='fire' onclick='responseTeamEvent(this)'>Fire</button>
+      <button id='security' onclick='responseTeamEvent(this)'>Security</button>
+      <button id='alarm' onclick='setAlarmDuration()'>Alarm</button>
+      <button id='lockSafe' onclick='responseTeamEvent(this)'>Lock Safe</button>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="static/jquery-3.3.1.slim.min.js"></script>
+  <script src="response.js"></script>
+</body>
+
+</html>

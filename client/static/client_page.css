@@ -1,0 +1,121 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  color: #222;
+  font-family: 'Sans';
+}
+
+body {
+  display: grid;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#connectionStatus {
+  color: #FF0000;
+  font-size: 1em;
+}
+
+#message {
+  display: grid;
+  height: 20%;
+  margin-bottom: 40px;
+}
+
+#message p {
+  margin: auto;
+  font-size: 2em;
+  font-family: monospace;
+}
+
+#actionButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border-radius: 0.1em;
+  color: #757575;
+  background-color: #f2f2f2;
+  border: solid 1px #f2f2f2;
+  font-size: 2em;
+  margin: 0.1em;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  color: #222;
+  cursor: pointer;
+}
+
+#overlay {
+  /* Sit on top of the page content */
+  position: fixed;
+  /* Hidden by default */
+  display: none;
+  /* Full width (cover the whole page) */
+  width: 100%;
+  /* Full height (cover the whole page) */
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 2;
+}
+
+.overlay-content{
+  background-color: #fefefe;
+  border-radius: 0.2em;
+  margin: auto;
+  margin-top: 150px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.overlay{
+  margin-top: 40px;
+}
+
+#text {
+  top: 30%;
+  left: 50%;
+  color: black;
+}
+
+#duration {
+  top: 50%;
+  left: 50%; 
+  font-size: 2em;
+  font-family: monospace;
+  color: black;
+}
+
+/* Desktop */
+@media only screen and (min-width: 900px) {
+  #actionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    grid-area: actionButtons;
+  }
+
+  #actionButtons button {
+    margin: 0.5em;
+  }
+}
